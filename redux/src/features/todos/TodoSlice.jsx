@@ -25,9 +25,13 @@ const TodoSlice = createSlice({
         todo.text = text;
         state.status = 'succeeded';
       }
+    
     },
+     clearAllTodo: (state) => {
+        state.todos = []
+      },
   },
 });
 
-export const { addTodo, deleteTodo, editTodo } = TodoSlice.actions;
+export const { addTodo, deleteTodo, editTodo , clearAllTodo} = TodoSlice.actions;
 export default TodoSlice.reducer;

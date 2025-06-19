@@ -1,7 +1,7 @@
 // TodoList.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, deleteTodo, editTodo } from './TodoSlice';
+import { addTodo, deleteTodo, editTodo , clearAllTodo } from './TodoSlice';
 
 const TodoList = () => {
   const [text, setText] = useState('');
@@ -30,6 +30,9 @@ const TodoList = () => {
       setEditText('');
     }
   };
+  const handleClearAll =() =>{
+    dispatch(clearAllTodo())
+  }
 
   return (
     <div className="container my-4">
@@ -89,11 +92,15 @@ const TodoList = () => {
                     Edit
                   </button>
                 </div>
+               
               </>
             )}
           </li>
         ))}
       </ul>
+       <div className='text-center mt-4 justify-content-center align-items-center'>
+                  <button className='btn btn-danger ' onClick={handleClearAll}>clear all</button>
+                </div>
     </div>
   );
 };
