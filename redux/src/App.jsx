@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { store } from './app/store'
 import './App.css'
 import TodoList from './features/todos/TodoList'
-
+import ProductList from './product/ProductList'
 function App() {
 
 
@@ -11,6 +11,7 @@ function App() {
     <Provider store={store}>
       
       <TodoList />
+      <ProductList />
     </Provider>
   )
 }
